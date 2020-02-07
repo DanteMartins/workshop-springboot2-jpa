@@ -1,8 +1,8 @@
-package com.dantemartins.course.repositories;
+package com.educandoweb.course.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.dantemartins.course.entities.Product;
+import com.educandoweb.course.entities.Product;
 
 public interface ProductRepository extends JpaRepository<Product, Long> {
 

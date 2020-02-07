@@ -1,4 +1,4 @@
-package com.dantemartins.course.config;
+package com.educandoweb.course.config;
 
 import java.time.Instant;
 import java.util.Arrays;
@@ -8,15 +8,15 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
-import com.dantemartins.course.entities.Category;
-import com.dantemartins.course.entities.Order;
-import com.dantemartins.course.entities.Product;
-import com.dantemartins.course.entities.User;
-import com.dantemartins.course.entities.enums.OrderStatus;
-import com.dantemartins.course.repositories.CategoryRepository;
-import com.dantemartins.course.repositories.OrderRepository;
-import com.dantemartins.course.repositories.ProductRepository;
-import com.dantemartins.course.repositories.UserRepository;
+import com.educandoweb.course.entities.Category;
+import com.educandoweb.course.entities.Order;
+import com.educandoweb.course.entities.Product;
+import com.educandoweb.course.entities.User;
+import com.educandoweb.course.entities.enums.OrderStatus;
+import com.educandoweb.course.repositories.CategoryRepository;
+import com.educandoweb.course.repositories.OrderRepository;
+import com.educandoweb.course.repositories.ProductRepository;
+import com.educandoweb.course.repositories.UserRepository;
 
 @Configuration
 @Profile("test")
@@ -48,6 +48,15 @@ public class TestConfig implements CommandLineRunner {
 		Product p5 = new Product(null, "Rails for Dummies", "Cras fringilla convallis sem vel faucibus.", 100.99, "");
 		
 		categoryRepository.saveAll(Arrays.asList(cat1, cat2, cat3));
+		productRepository.saveAll(Arrays.asList(p1, p2, p3, p4, p5));
+		
+		p1.getCategories().add(cat2);
+		p2.getCategories().add(cat1);
+		p2.getCategories().add(cat3);
+		p3.getCategories().add(cat3);
+		p4.getCategories().add(cat3);
+		p5.getCategories().add(cat2);
+		
 		productRepository.saveAll(Arrays.asList(p1, p2, p3, p4, p5));
 		
 		User u1 = new User(null, "Maria Brown", "maria@gmail.com", "988888888", "123456");

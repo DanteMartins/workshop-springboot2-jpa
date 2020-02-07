@@ -1,4 +1,4 @@
-package com.dantemartins.course.entities;
+package com.educandoweb.course.entities;
 
 import java.io.Serializable;
 import java.time.Instant;
@@ -11,7 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.dantemartins.course.entities.enums.OrderStatus;
+import com.educandoweb.course.entities.enums.OrderStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
@@ -32,7 +32,7 @@ public class Order implements Serializable{
 	@ManyToOne
     @JoinColumn(name = "client_id")
 	private User client;
-	
+
 	public Order() {
 	}
 	

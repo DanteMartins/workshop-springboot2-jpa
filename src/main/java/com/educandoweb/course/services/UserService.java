@@ -1,4 +1,4 @@
-package com.dantemartins.course.services;
+package com.educandoweb.course.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,8 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dantemartins.course.entities.User;
-import com.dantemartins.course.repositories.UserRepository;
+import com.educandoweb.course.entities.User;
+import com.educandoweb.course.repositories.UserRepository;
 
 @Service
 public class UserService {
